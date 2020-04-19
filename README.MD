@@ -10,7 +10,7 @@ A very easy way to use the TransIP Rest API in your Laravel Project.
 
 To make full advantage of this package you can see here what functionality can be used within the API of TransIP.
 
-[TransIP RestAPI Docs](https://api.transip.nl/rest/docs.html)
+[TransIP RestAPI Docs](https://api.transip.nl/rest/docs.html)  
 [TransIP PHP Package](https://github.com/transip/transip-api-php)
 
 ## Installation
