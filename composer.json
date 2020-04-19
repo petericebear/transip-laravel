@@ -1,0 +1,30 @@
+{
+    "name": "intvent/transip-laravel",
+    "description": "A Laravel wrapper for the TransIP REST API Client.",
+    "require": {
+        "illuminate/support": "^6.0|^7.0",
+        "transip/transip-api-php": "^6.0"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "IntVent\\TransIPLaravel\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "IntVent\\TransIPLaravel\\TransIPServiceProvider"
+            ],
+            "aliases": {
+                "TransIP": "IntVent\\TransIPLaravel\\TransIPFacade"
+            }
+        }
+    },
+    "authors": [
+        {
+            "name": "Peter Steenbergen",
+            "email": "peter@3ws.nl"
+        }
+    ]
+}
