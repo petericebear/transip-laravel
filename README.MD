@@ -6,6 +6,13 @@ A very easy way to use the TransIP Rest API in your Laravel Project.
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![Total Downloads](https://img.shields.io/packagist/dt/intvent/transip-laravel.svg?style=flat-square)](https://packagist.org/packages/intvent/transip-laravel)
 
+## Link to documentation
+
+To make full advantage of this package you can see here what functionality can be used within the API of TransIP.
+
+[TransIP RestAPI Docs](https://api.transip.nl/rest/docs.html)
+[TransIP PHP Package](https://github.com/transip/transip-api-php)
+
 ## Installation
 
 First add your API credentials into your .env file.
@@ -105,6 +112,10 @@ class TransipTestCommand extends Command
 ## Security
 
 If you discover any security-related issues, please email info@intvent.nl instead of using the issue tracker.
+
+## Support
+
+You can sponsor me, Peter Steenbergen also known as Peter Icebear, on [Github sponsors](https://github.com/sponsors/petericebear) or through this [affiliate link](https://bit.ly/TransIP-VPS).  
 
 ## Credits
 
