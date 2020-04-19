@@ -51,7 +51,9 @@ Optionally the IntVent\TransIPLaravel\GoogleCalendarFacade can be registered:
 
 You must publish the configuration with this command:
 
+```bash
 php artisan vendor:publish --provider="IntVent\TransIPLaravel\TransIPServiceProvider"
+```
 
 This will add a configuration file called 'transip.php' in the config folder with the following contents:
 
