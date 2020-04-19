@@ -22,16 +22,19 @@ class TransIPServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(
-            __DIR__.'/../config/transip.php', 'transip'
-        );
+        $this->mergeConfigFrom(__DIR__.'/../config/transip.php', 'transip');
 
-        $config = $this->app['config']->get('transip');
-        $this->app->instance('transip', new TransipAPI(
-            $config['login'],
-            $config['privateKey'],
-            $config['generateWhitelistOnlyTokens']
-        ));
+        $this->app->bind(TransipAPI::class, function () {
+            $config = config('transip');
+
+            return new TransipAPI(
+                $config['login'],
+                $config['privateKey'],
+                $config['generateWhitelistOnlyTokens']
+            );
+        });
+
+        $this->app->alias(TransipAPI::class, 'transip');
     }
 
     /**
