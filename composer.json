@@ -2,7 +2,8 @@
     "name": "intvent/transip-laravel",
     "description": "A Laravel wrapper for the TransIP REST API Client.",
     "require": {
-        "illuminate/support": "^6.0|^7.0",
+        "php": "^7.2.0",
+        "illuminate/support": "^5.0|^6.0|^7.0",
         "transip/transip-api-php": "^6.0"
     },
     "license": "MIT",

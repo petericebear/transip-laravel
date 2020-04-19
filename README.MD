@@ -1,12 +1,12 @@
 # Laravel TransIP Rest Client - Wrapper
 
-A very easy way to use the TransIP Rest API in your Laravel 6.x & 7.x Project.
+A very easy way to use the TransIP Rest API in your Laravel Project.
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/intvent/transip-laravel.svg?style=flat-square)](https://packagist.org/packages/intvent/transip-laravel)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![Total Downloads](https://img.shields.io/packagist/dt/intvent/transip-laravel.svg?style=flat-square)](https://packagist.org/packages/intvent/transip-laravel)
 
-# Installation
+## Installation
 
 First add your API credentials into your .env file.
 ```bash
@@ -17,13 +17,15 @@ TRANSIP_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----<your_private_key_here-----END P
 TRANSIP_WHITELIST_ONLY=false
 ```
 
-# Install through composer
+## Install with composer
 
 ```bash
 composer require intvent/transip-laravel
 ```
 
-Next up the service provider must be registered:
+This package will autoload the SrviceProvider and Facade listed below. If it does not automatically you can add it easily with the following steps.
+
+Register the Service Provider:
 ```php
 'providers' => [
     ...
@@ -31,7 +33,7 @@ Next up the service provider must be registered:
 ];
 ```
 
-Optionally the IntVent\TransIPLaravel\GoogleCalendarFacade must be registered:
+Optionally the IntVent\TransIPLaravel\GoogleCalendarFacade can be registered:
 ```php
 'aliases' => [
 	...
@@ -64,3 +66,51 @@ return [
 
 ];
 ```
+
+## Usage
+
+Using the Facade
+```php
+<?php
+
+use TransIP;
+
+// Get all VPS from your account.
+$allVps = TransIP::vps()->getAll();
+```
+
+Using the auto IoC binding
+
+```php
+<?php
+
+use Transip\Api\Library\TransipAPI;
+
+class TransipTestCommand extends Command
+{
+    protected $signature = 'transip:test';
+    
+    public function __construct()
+    {
+        parent::__construct();
+    }
+    
+    public function handle(TransipAPI $api))
+    {
+        $allVps = $api->vps()->getAll();
+    }
+}
+```
+
+## Security
+
+If you discover any security-related issues, please email info@intvent.nl instead of using the issue tracker.
+
+## Credits
+
+- [Peter Steenbergen](https://github.com/petericebear)
+- [All Contributors](../../contributors)
+
+## License
+
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
