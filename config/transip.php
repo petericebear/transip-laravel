@@ -15,4 +15,6 @@ return [
 
     'generateWhitelistOnlyTokens' => env('TRANSIP_WHITELIST_ONLY', true),
 
+    'testMode' => env('TRANSIP_TEST_MODE', false),
+
 ];

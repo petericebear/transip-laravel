@@ -26,12 +26,14 @@ class TransIPServiceProvider extends ServiceProvider
 
         $this->app->bind(TransipAPI::class, function () {
             $config = config('transip');
-
-            return new TransipAPI(
+            $api = new TransipAPI(
                 $config['login'],
                 $config['privateKey'],
                 $config['generateWhitelistOnlyTokens']
             );
+            $api->setTestMode($config['testMode']);
+
+            return $api;
         });
 
         $this->app->alias(TransipAPI::class, 'transip');
