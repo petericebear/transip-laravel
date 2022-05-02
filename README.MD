@@ -40,7 +40,7 @@ Register the Service Provider:
 ];
 ```
 
-Optionally the IntVent\TransIPLaravel\GoogleCalendarFacade can be registered:
+Optionally the Facade can be registered:
 ```php
 'aliases' => [
 	...
